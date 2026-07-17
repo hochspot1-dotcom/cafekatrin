@@ -1267,7 +1267,7 @@ section {
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 80%;
         max-width: 320px;
         height: 100vh;
@@ -1275,13 +1275,14 @@ section {
         border-left: 1px solid rgba(255, 255, 255, 0.05);
         padding: 100px 40px;
         z-index: 999;
-        transition: right var(--transition-normal), visibility var(--transition-normal);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal), visibility var(--transition-normal);
         box-shadow: var(--shadow-lg);
         visibility: hidden;
     }
     
     .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
         visibility: visible;
     }
     
