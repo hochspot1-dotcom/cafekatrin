@@ -3,14 +3,14 @@
    ========================================================================== */
 :root {
     /* Color Palette */
-    --color-bg: #fcfbf7; /* Warm creamy light background */
-    --color-bg-offset: #f5eedf; /* Sunny sand / warm cream offset */
-    --color-card-bg: rgba(255, 255, 255, 0.9); /* Translucent white card bg */
-    --color-text: #2d2621; /* Rich warm dark brown/charcoal for text */
-    --color-text-muted: #6e645d; /* Warm gray-brown for muted text */
-    --color-primary: #ff6f3c; /* Bright summer orange/coral */
-    --color-primary-rgb: 255, 111, 60;
-    --color-primary-hover: #ff855a;
+    --color-bg: #faf9f5; /* Warm creamy light background */
+    --color-bg-offset: #f2efe9; /* Linen sand / warm grey offset */
+    --color-card-bg: rgba(255, 255, 255, 0.93); /* Translucent white card bg */
+    --color-text: #222b24; /* Deep dark forest charcoal for max readability */
+    --color-text-muted: #576259; /* Soft forest grey for muted text */
+    --color-primary: #386641; /* Calm premium leaf/forest green */
+    --color-primary-rgb: 56, 102, 65;
+    --color-primary-hover: #2b4c31;
     --color-secondary: #0077ff; /* VK Blue for social buttons */
     --color-secondary-hover: #3399ff;
     --color-white: #ffffff;
@@ -28,11 +28,11 @@
     --border-radius-lg: 24px;
     
     /* Shadows & Glows */
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --glow-primary: 0 0 15px rgba(255, 111, 60, 0.35);
-    --glow-light: 0 0 25px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+    --glow-primary: 0 0 15px rgba(56, 102, 65, 0.2);
+    --glow-light: 0 0 25px rgba(0, 0, 0, 0.03);
     
     /* Transitions */
     --transition-fast: 0.2s ease;
@@ -40,8 +40,8 @@
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Header Scrolled Theme colors */
-    --color-bg-header: rgba(252, 251, 247, 0.9);
-    --color-border-header: rgba(0, 0, 0, 0.06);
+    --color-bg-header: rgba(250, 249, 245, 0.95);
+    --color-border-header: rgba(0, 0, 0, 0.05);
 }
 /* ==========================================================================
    RESET & BASE STYLES
@@ -179,15 +179,17 @@ ul {
     transition: all var(--transition-normal);
     display: flex;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(250, 249, 245, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .main-header.scrolled {
     background-color: var(--color-bg-header);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border-header);
     height: 70px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--color-border-header);
 }
 
 .header-container {
@@ -845,8 +847,8 @@ section {
 .phone-mockup {
     width: 250px;
     height: 480px;
-    background-color: #f3ece0;
-    border: 8px solid #dfd5c2;
+    background-color: #e9efe6;
+    border: 8px solid #d3decb;
     border-radius: 36px;
     box-shadow: var(--shadow-lg), 0 10px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -859,12 +861,12 @@ section {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #fcfbf7;
+    background-color: #faf9f5;
     font-size: 0.75rem;
 }
 
 .chat-header {
-    background-color: #eedfca;
+    background-color: #e1e9de;
     padding: 12px;
     display: flex;
     align-items: center;
@@ -906,7 +908,7 @@ section {
 }
 
 .message.received {
-    background-color: #eedfca;
+    background-color: #e1e9de;
     color: var(--color-text);
     align-self: flex-start;
     border-bottom-left-radius: 2px;
@@ -920,7 +922,7 @@ section {
 }
 
 .chat-input-bar {
-    background-color: #eedfca;
+    background-color: #e1e9de;
     padding: 10px 12px;
     display: flex;
     justify-content: space-between;
