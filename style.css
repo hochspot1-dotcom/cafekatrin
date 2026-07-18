@@ -1275,51 +1275,11 @@ section {
 @media (max-width: 768px) {
     /* Navbar styles */
     .mobile-nav-toggle {
-        display: flex;
+        display: none !important;
     }
     
     .nav-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background-color: var(--color-bg);
-        border-left: 1px solid rgba(0, 0, 0, 0.06);
-        padding: 100px 40px;
-        z-index: 999;
-        transform: translateX(100%);
-        transition: transform var(--transition-normal), visibility var(--transition-normal);
-        box-shadow: var(--shadow-lg);
-        visibility: hidden;
-    }
-    
-    .nav-menu.active {
-        transform: translateX(0);
-        visibility: visible;
-    }
-    
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 24px;
-    }
-    
-    .nav-link {
-        font-size: 1.15rem;
-    }
-    
-    /* Toggle active state animation */
-    .mobile-nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .mobile-nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        display: none !important;
     }
     
     /* Hero size reduction */
@@ -1632,20 +1592,30 @@ section {
     .main-header.scrolled {
         height: 60px;
     }
+    .header-container {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
     .logo {
         font-size: 1.5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
     }
     .hero-section {
         height: auto;
         min-height: 80vh;
-        padding: 120px 0 80px 0;
+        padding: 170px 0 80px 0;
         text-align: center;
     }
     .hero-content {
         max-width: 100%;
         margin: 0 auto;
-        padding: 30px 20px;
-        background: rgba(255, 255, 255, 0.45);
+        padding: 24px 18px;
+        background: rgba(255, 255, 255, 0.42);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1655,16 +1625,21 @@ section {
     }
     .hero-text {
         display: block;
-        font-size: 0.95rem;
-        margin-bottom: 24px;
-        line-height: 1.5;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.45;
     }
     .hero-title {
-        font-size: 1.85rem;
-        margin-bottom: 12px;
+        font-size: 1.65rem;
+        margin-bottom: 8px;
     }
     .hero-buttons {
         justify-content: center;
+        gap: 12px;
+    }
+    .hero-buttons .btn {
+        padding: 11px 22px;
+        font-size: 0.88rem;
     }
 }
 
