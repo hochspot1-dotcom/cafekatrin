@@ -1353,6 +1353,10 @@ section {
         padding: 24px 16px;
         border-radius: var(--border-radius-md);
     }
+    .hero-text {
+        font-size: 0.88rem;
+        margin-bottom: 20px;
+    }
     
     .hero-buttons {
         flex-direction: column;
@@ -1650,11 +1654,14 @@ section {
         display: none;
     }
     .hero-text {
-        display: none;
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+        line-height: 1.5;
     }
     .hero-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 1.85rem;
+        margin-bottom: 12px;
     }
     .hero-buttons {
         justify-content: center;
