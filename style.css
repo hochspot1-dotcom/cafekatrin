@@ -367,46 +367,48 @@ ul {
     flex-wrap: wrap;
 }
 
-/* Mouse Scroll Down Animation */
+/* Bouncing Scroll Down Chevron */
 .scroll-down {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
+}
+
+.scroll-down-link {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 10px rgba(34, 43, 36, 0.05);
+    animation: bounceChevron 2s infinite;
+    transition: all var(--transition-fast);
 }
 
-.scroll-down .mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid var(--color-text-muted);
-    border-radius: 12px;
-    position: relative;
+.scroll-down-link:hover {
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--color-primary-hover);
 }
 
-.scroll-down .wheel {
-    width: 4px;
-    height: 8px;
-    background-color: var(--color-primary);
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollWheel 1.5s infinite;
-}
-
-.scroll-down .arrow {
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--color-text-muted);
-    border-bottom: 2px solid var(--color-text-muted);
-    transform: rotate(45deg);
-    animation: arrowGlow 1.5s infinite;
+@keyframes bounceChevron {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
 }
 
 /* ==========================================================================
@@ -1638,10 +1640,21 @@ section {
     .hero-content {
         max-width: 100%;
         margin: 0 auto;
+        padding: 30px 20px;
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .hero-subtitle {
+        display: none;
     }
     .hero-text {
-        margin-left: auto;
-        margin-right: auto;
+        display: none;
+    }
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     .hero-buttons {
         justify-content: center;
