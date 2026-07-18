@@ -3,9 +3,9 @@
    ========================================================================== */
 :root {
     /* Color Palette */
-    --color-bg: #faf9f5; /* Warm creamy light background */
-    --color-bg-offset: #f2efe9; /* Linen sand / warm grey offset */
-    --color-card-bg: rgba(255, 255, 255, 0.93); /* Translucent white card bg */
+    --color-bg: #eceae1; /* Soft linen sand (less white, easy on eyes) */
+    --color-bg-offset: #dfdbd0; /* Darker warm linen sand offset */
+    --color-card-bg: rgba(255, 255, 255, 0.45); /* Glassmorphic card bg */
     --color-text: #222b24; /* Deep dark forest charcoal for max readability */
     --color-text-muted: #576259; /* Soft forest grey for muted text */
     --color-primary: #386641; /* Calm premium leaf/forest green */
@@ -29,10 +29,10 @@
     
     /* Shadows & Glows */
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
-    --glow-primary: 0 0 15px rgba(56, 102, 65, 0.2);
-    --glow-light: 0 0 25px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    --glow-primary: 0 0 15px rgba(56, 102, 65, 0.15);
+    --glow-light: 0 0 25px rgba(0, 0, 0, 0.02);
     
     /* Transitions */
     --transition-fast: 0.2s ease;
@@ -40,7 +40,7 @@
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Header Scrolled Theme colors */
-    --color-bg-header: rgba(250, 249, 245, 0.95);
+    --color-bg-header: rgba(236, 234, 225, 0.85);
     --color-border-header: rgba(0, 0, 0, 0.05);
 }
 /* ==========================================================================
@@ -179,7 +179,7 @@ ul {
     transition: all var(--transition-normal);
     display: flex;
     align-items: center;
-    background-color: rgba(250, 249, 245, 0.75);
+    background-color: rgba(236, 234, 225, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -283,8 +283,8 @@ ul {
    ========================================================================== */
 .hero-section {
     position: relative;
-    height: 70vh;
-    min-height: 480px;
+    height: 100vh;
+    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -313,7 +313,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(252, 251, 247, 0.5) 100%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(236, 234, 225, 0.6) 100%);
     z-index: 2;
 }
 
@@ -325,13 +325,13 @@ ul {
 
 .hero-content {
     max-width: 650px;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.42);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     padding: 40px;
     border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 40px -15px rgba(34, 43, 36, 0.08);
     animation: fadeInUp var(--transition-slow) forwards;
 }
 
@@ -462,18 +462,19 @@ section {
 
 .feature-card {
     background-color: var(--color-card-bg);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: var(--border-radius-md);
     padding: 40px 30px;
     transition: all var(--transition-normal);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(var(--color-primary-rgb), 0.35);
-    background-color: var(--color-white);
-    box-shadow: var(--shadow-lg);
+    border-color: rgba(var(--color-primary-rgb), 0.45);
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 30px -10px rgba(34, 43, 36, 0.08);
 }
 
 .feature-icon-wrapper {
@@ -561,17 +562,20 @@ section {
 }
 
 .dish-card {
-    background-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: var(--border-radius-md);
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     transition: all var(--transition-normal);
 }
 
 .dish-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(var(--color-primary-rgb), 0.2);
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 15px 30px -10px rgba(34, 43, 36, 0.08);
+    border-color: rgba(var(--color-primary-rgb), 0.35);
 }
 
 .dish-img-wrapper {
@@ -744,14 +748,17 @@ section {
 }
 
 .billiards-price-card {
-    background-color: var(--color-bg-offset);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-radius: var(--border-radius-md);
     padding: 16px 24px;
     display: inline-flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 40px;
+    max-width: 100%;
 }
 
 .price-val {
@@ -789,17 +796,19 @@ section {
 }
 
 .bot-card {
-    background: linear-gradient(135deg, #ffffff 0%, var(--color-bg-offset) 100%);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.25) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: var(--border-radius-lg);
     padding: 60px;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 40px;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(34, 43, 36, 0.05);
 }
 
 .bot-card-content {
@@ -1213,6 +1222,10 @@ section {
         max-width: 100%;
         text-align: center;
     }
+
+    .billiards-content h2 {
+        font-size: 2.2rem;
+    }
     
     .billiards-price-card {
         justify-content: center;
@@ -1517,16 +1530,18 @@ section {
     flex-direction: column;
     padding: 12px 16px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.01);
-    border: 1px solid rgba(0, 0, 0, 0.01);
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.25s ease;
 }
 
 .menu-item-row:hover {
-    background-color: var(--color-white);
-    border-color: rgba(var(--color-primary-rgb), 0.2);
+    background-color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(var(--color-primary-rgb), 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 12px rgba(34, 43, 36, 0.03);
 }
 
 .item-name-row {
@@ -1661,11 +1676,17 @@ section {
     section {
         padding: 70px 0;
     }
+    .billiards-content h2 {
+        font-size: 1.9rem;
+    }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
+    }
+    .billiards-content h2 {
+        font-size: 1.6rem;
     }
     
     section {
